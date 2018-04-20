@@ -1947,6 +1947,7 @@
           indentWithTabs: droppy.get("indentWithTabs"),
           keyMap: "sublime",
           lineNumbers: true,
+          inputStyle: "contenteditable",
           lineWrapping: droppy.get("lineWrapping"),
           mode: "text/plain",
           readOnly: droppy.readOnly,
@@ -1957,6 +1958,9 @@
           theme: droppy.get("theme"),
         });
 
+		editor.setOption("spellcheck",true)
+        window.editor = editor;
+		
         if (!CodeMirror.autoLoadMode) initModeLoad();
 
         var mode, fileMode = modeFromShebang(text);
